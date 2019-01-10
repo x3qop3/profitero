@@ -53,7 +53,7 @@ link_on_page = get_link(object_nokogiri)
 puts link_on_page
 puts page_result
 #открываем файл сsv для записи
-CSV.open("petsonic.csv", "w") do |csv|
+CSV.open(Choice[:file], "w") do |csv|
   csv << ["prod_name_and_weight", "price", "logo"]
   link_on_page.each do |go_to_link|
     object_nokogiri = get_doc(go_to_link)
