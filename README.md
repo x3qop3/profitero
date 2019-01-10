@@ -5,6 +5,7 @@
 Это можно сделать следующими командами:
 
 `gem install bundler`
+
 `bundler install`
  
  undle install необходимо выполнять в директории с проектом.
