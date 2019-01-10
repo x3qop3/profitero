@@ -21,15 +21,24 @@ Choice.options
 Choice - библиотека для определения анализа и параметра командной строки 
 
 option - отдельная опция, их может быть несколько
+
 option :file : опция для файла
+
  short '-f' : короткое название
+ 
     long '--file=petsonic.csv' : полное название
+    
     default 'petsonic.cs' : значение по умолчанию
     
+    
    option :seed  : опция для ссылки
+   
     short '-s'   :короткое название
+    
     long '--seed=URL' :полное название
+    
     default 'https://www.petsonic.com/snacks-huesos-para-perros/' : значение по умолчанию
+    
 
 
 
