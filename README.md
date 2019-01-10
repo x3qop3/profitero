@@ -2,16 +2,17 @@
 gem 'nokogiri'
 gem 'choice'
 gem 'curb'
-они находятся в файле Gemfile
- задать входные данные : 
+они находятся в файле Gemfile.
+
+ Задать входные данные : 
  Choice.options do
- # название файла куда записывать результат
+  название файла куда записывать результат
   option :file do
     short '-f'
     long '--file=petsonic.csv'
     default 'petsonic.csv'
   end
-  # начальный URL
+   начальный URL
   option :seed do
     short '-s'
     long '--seed=URL'
