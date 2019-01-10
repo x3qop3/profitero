@@ -4,17 +4,7 @@ gem 'choice'
 gem 'curb'
 они находятся в файле Gemfile.
 
- Задать входные данные : 
- Choice.options do
-  # название файла куда записывать результат
-  option :file do
-    short '-f'
-    long '--file=petsonic.csv'
-    default 'petsonic.csv'
-  end
-  # начальный URL
-  option :seed do
-    short '-s'
-    long '--seed=URL'
-    default 'https://www.petsonic.com/snacks-huesos-para-perros/'
-  end
+Команда для запуска скрипта из консоли : ruby Путь к файлу/ Sccc.rb , например если файл на рабочем столе то команда запуска выглядит так : ruby Desktop/Sccc.rb
+
+
+
