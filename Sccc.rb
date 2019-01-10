@@ -68,36 +68,34 @@ CSV.open("petsonic.csv", "w") do |csv|
       #дублируем данные
       const_prod = product.dup
       #указываем порядок записи в файл csv
-      product = [const_prod[0] + " " + comp[0], comp[1], const_prod[1]]
+      const_prod = [const_prod[0] + " " + comp[0], comp[1], const_prod[1]]
       const_prod.join(" ")
       #записываем в csv файл
       csv << const_prod
     end
   end
-  # #циклом получаем адресс новой страницы и отправляем её адресс на скачивание и получения Nokogiri дерева
-  # (2..page_result).each do |url|
-  #   object_nokogiri = get_doc("#{SEED}#{url}")
-  #   link_on_page = get_link(object_nokogiri)
-  #   link_on_page.each do |go_to_link|
-  #     link_on_page.each do |go_to_link|
-  #       object_nokogiri = get_doc(go_to_link)
-  #       product = [object_nokogiri.xpath(PRODUCT_NAME).text.strip, object_nokogiri.xpath(IMAGE_LINK).text]
-  #
-  #       object_nokogiri.xpath(BLOCK_WEIGHT_PRICE).each do |comp|
-  #         comp = [
-  #             comp.xpath(PRODUCT_WEIGHT).text,
-  #             comp.xpath(PRODUCT_PRICE).text.gsub(/[^0-9\.]/, '')
-  #         ]
-  #
-  #         const_prod = product.dup
-  #         const_prod = [const_prod[0] + " " + comp[0], comp[1], const_prod[1]]
-  #         const_prod.join(" ")
-  #
-  #         csv << const_prod
-  #
-  #       end
-  #     end
-   # end
-  #end
+  #циклом получаем адресс новой страницы и отправляем её адресс на скачивание и получения Nokogiri дерева
+  (2..page_result).each do |url|
+    object_nokogiri = get_doc("#{SEED}#{url}")
+    link_on_page = get_link(object_nokogiri)
+    link_on_page.each do |go_to_link|
+      object_nokogiri = get_doc(go_to_link)
+      product = [object_nokogiri.xpath(PRODUCT_NAME).text.strip, object_nokogiri.xpath(IMAGE_LINK).text]
+
+      object_nokogiri.xpath(BLOCK_WEIGHT_PRICE).each do |comp|
+        comp = [
+            comp.xpath(PRODUCT_WEIGHT).text,
+            comp.xpath(PRODUCT_PRICE).text.gsub(/[^0-9\.]/, '')
+        ]
+
+        const_prod = product.dup
+        const_prod = [const_prod[0] + " " + comp[0], comp[1], const_prod[1]]
+        const_prod.join(" ")
+
+        csv << const_prod
+
+      end
+    end
+  end
 end
 
